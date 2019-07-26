@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="playground">
     <h2 class="title">Costflow Playground</h2>
-    <p>Syntax Version: V0.1</p>
+    <p class="version"><a href="https://github.com/costflow/syntax">Syntax v0.1</a> / <a href="https://github.com/costflow/parser">Parser v0.1.3</a></p>
     <nav>
       <a class="nav-item" href="https://docs.costflow.io/" target="_blank">Docs</a>
       <a class="nav-item" href="https://github.com/costflow" target="_blank">Github</a>
@@ -184,6 +184,15 @@ export default {
 }
 .playground .title {
   font-size: 32px;
+}
+.playground .version {
+  font-size: 13px;
+  color: #666;
+  margin: 0 0 30px;
+}
+.playground .version a {
+  color: #666;
+  text-decoration: none;
 }
 .playground nav .nav-item {
   margin: 0 12px;

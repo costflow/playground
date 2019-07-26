@@ -1,4 +1,8 @@
-# playground
+# Costflow Playground
+
+[https://playground.costflow.io/](https://playground.costflow.io/)
+
+<details><summary>DEV</summary><p>
 
 ## Project setup
 ```
@@ -27,3 +31,5 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+</p></details>

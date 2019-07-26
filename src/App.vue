@@ -23,7 +23,7 @@
     <button @click="toggleConfig" v-else>Hide Config</button>
     <div class="code-editor config" v-if="showConfig">
       <codemirror class="code-editor" v-model="config" :options="configOptions"></codemirror>
-      <p class="tips">* If you change the default config, the examples will be unavailable in this browser. You can find them back by open an incognito window.</p>
+      <p class="tips">* If you change the default config, the examples will be unavailable in this browser. You can get them back by opening an incognito window.</p>
       <button @click="saveConfig">Save Config</button>
     </div>
   </div>

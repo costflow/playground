@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="playground">
     <h2 class="title">Costflow Playground</h2>
-    <p class="version"><a href="https://github.com/costflow/syntax">Syntax v0.1</a> / <a href="https://github.com/costflow/parser">Parser v0.1.3</a></p>
+    <p class="version"><a href="https://github.com/costflow/syntax">Syntax v0.1</a> / <a href="https://github.com/costflow/parser">Parser v0.1.4</a></p>
     <nav>
       <a class="nav-item" href="https://docs.costflow.io/" target="_blank">Docs</a>
       <a class="nav-item" href="https://github.com/costflow" target="_blank">Github</a>

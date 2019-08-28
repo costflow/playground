@@ -1,12 +1,25 @@
 {
   "name": "costflow-playground",
   "version": "0.2.0",
-  "private": true,
+  "author": "leplay <leqcany@gmail.com> (https://github.com/leplay)",
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
+  "keywords": [
+    "costflow",
+    "ledger",
+    "beancount",
+    "hledger",
+    "plain text accounting",
+    "double-entry bookkeeping"
+  ],
+  "bugs": {
+    "url": "https://github.com/costflow/playground/issues"
+  },
+  "homepage": "https://playground.costflow.io/",
   "dependencies": {
     "core-js": "^2.6.5",
     "costflow": "^0.2.0",

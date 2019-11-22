@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="playground">
     <h2 class="title">Costflow Playground</h2>
-    <p class="version"><a href="https://github.com/costflow/syntax">Syntax v0.2</a> / <a href="https://github.com/costflow/parser">Parser v0.2.0</a></p>
+    <p class="version"><a href="https://docs.costflow.io/syntax/">Syntax v0.3</a> / <a href="https://github.com/costflow/parser">Parser v0.3.0</a></p>
     <nav>
       <a class="nav-item" href="https://docs.costflow.io/" target="_blank">Docs</a>
       <a class="nav-item" href="https://github.com/costflow" target="_blank">Github</a>
@@ -45,10 +45,19 @@ const DEFAULT_CONFIG = {
     'rx': 'Assets:Receivables:X',
     'ry': 'Assets:Receivables:Y',
     'boc': 'Assets:CN:BOC',
+    'cloud': 'Expenses:Cloud',
     'cmb': 'Liabilities:CreditCard:CMB',
     'food': 'Expenses:Food',
     'phone': 'Expenses:Home:Phone',
-    'rent': 'Expenses:Home:Rent'
+    'rent': 'Expenses:Home:Rent',
+    'subscription': 'Expenses:Subscriptions',
+    'visa': 'Liabilities:CreditCard:Visa'
+  },
+  formula: {
+    '☕️': '@Leplays ☕️ {{ amount }} Liabilities:CreditCard:Visa > Expenses:Coffee',
+    'c2f': '{{ pre }} cmb > food',
+    'gcp': '@Google {{ amount }} USD visa > cloud',
+    'spotify': '@Spotify 15.98 USD visa > subscription'
   },
   alphavantage: null,
   indent: 2,
@@ -64,6 +73,10 @@ var examples = [
   '@Verizon | bofa -59.61 | phone 59.61',
   '2019-01-01 Rent | cmb -750 | boc -750 | rent 1500',
   'Dinner | bofa 180 CNY | rx -60 | ry -60 | food -60',
+  'f spotify',
+  'gcp 12.50',
+  'f c2f @KFC 36',
+  '☕️ 4.2',
   'Transfer to account in US | boc -5000 CNY @@ 726.81 USD  | bofa +726.81',
   'note bofa Called about fraudulent card.',
   'balance bofa 360',

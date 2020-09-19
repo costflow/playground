@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="playground">
     <h2 class="title">Costflow Playground</h2>
-    <p class="version"><a href="https://docs.costflow.io/syntax/">Syntax v0.3</a> / <a href="https://github.com/costflow/parser">Parser v0.3.2</a></p>
+    <p class="version"><a href="https://docs.costflow.io/syntax/">Syntax v0.3</a> / <a href="https://github.com/costflow/parser">Parser v0.3.3</a></p>
     <nav>
       <a class="nav-item" href="https://docs.costflow.io/" target="_blank">Docs</a>
       <a class="nav-item" href="https://github.com/costflow" target="_blank">Github</a>
@@ -132,9 +132,14 @@ export default {
         this.output = OUTPUT_PLACEHOLDER
         return
       }
-      let result = await costflow.parse(this.input, JSON.parse(config))
-      console.log(result)
-      this.output = result.output
+      try {
+        let result = await costflow.parse(this.input, JSON.parse(config))
+        if (result) {
+          this.output = result.output
+        }
+      } catch (error) {
+        console.log(error)
+      }
     }
   },
   methods: {

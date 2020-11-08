@@ -1,29 +1,85 @@
 <template>
   <div id="app" class="playground">
     <h2 class="title">Costflow Playground</h2>
-    <p class="version"><a href="https://docs.costflow.io/syntax/">Syntax v0.3</a> / <a href="https://github.com/costflow/parser">Parser v0.3.3</a></p>
+    <p class="version">
+      <a href="https://docs.costflow.io/syntax/">Syntax v1.0</a> /
+      <a href="https://github.com/costflow/parser">Parser v1.0.4</a>
+    </p>
     <nav>
-      <a class="nav-item" href="https://docs.costflow.io/" target="_blank">Docs</a>
-      <a class="nav-item" href="https://github.com/costflow" target="_blank">Github</a>
-      <a class="nav-item" href="https://www.costflow.io/" target="_blank">Early Access</a>
+      <a class="nav-item" href="https://docs.costflow.io/" target="_blank"
+        >Docs</a
+      >
+      <a class="nav-item" href="https://github.com/costflow" target="_blank"
+        >Github</a
+      >
+      <a class="nav-item" href="https://www.costflow.io/" target="_blank"
+        >Early Access</a
+      >
     </nav>
     <div class="input">
-      <input type="text" :value="input" @input="update" placeholder="Input your message" :class="{ full: !showShuffle }" />
-      <span class="icon shuffle" @click="randomExample" title="Run a random example" v-if="showShuffle">
-        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" aria-labelledby="shuffleIconTitle" stroke="#2329D6" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="#2329D6"> <title id="shuffleIconTitle">Run a random example</title> <path d="M21 16.0399H17.7707C15.8164 16.0399 13.9845 14.9697 12.8611 13.1716L10.7973 9.86831C9.67384 8.07022 7.84196 7 5.88762 7L3 7"/> <path d="M21 7H17.7707C15.8164 7 13.9845 8.18388 12.8611 10.1729L10.7973 13.8271C9.67384 15.8161 7.84196 17 5.88762 17L3 17"/> <path d="M19 4L22 7L19 10"/> <path d="M19 13L22 16L19 19"/> </svg>
+      <input
+        type="text"
+        :value="input"
+        @input="update"
+        placeholder="Input your message"
+        :class="{ full: !showShuffle }"
+      />
+      <span
+        class="icon shuffle"
+        @click="randomExample"
+        title="Run a random example"
+        v-if="showShuffle"
+      >
+        <svg
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24px"
+          height="24px"
+          viewBox="0 0 24 24"
+          aria-labelledby="shuffleIconTitle"
+          stroke="#2329D6"
+          stroke-width="1"
+          stroke-linecap="square"
+          stroke-linejoin="miter"
+          fill="none"
+          color="#2329D6"
+        >
+          <title id="shuffleIconTitle">Run a random example</title>
+          <path
+            d="M21 16.0399H17.7707C15.8164 16.0399 13.9845 14.9697 12.8611 13.1716L10.7973 9.86831C9.67384 8.07022 7.84196 7 5.88762 7L3 7"
+          />
+          <path
+            d="M21 7H17.7707C15.8164 7 13.9845 8.18388 12.8611 10.1729L10.7973 13.8271C9.67384 15.8161 7.84196 17 5.88762 17L3 17"
+          />
+          <path d="M19 4L22 7L19 10" />
+          <path d="M19 13L22 16L19 19" />
+        </svg>
       </span>
     </div>
     <div class="code-editor output">
       <codemirror v-model="output" :options="outputOptions"></codemirror>
-      <div class="icon copy" v-clipboard:copy="output" v-clipboard:success="onCopy" v-clipboard:error="onCopyError" v-if="input">
+      <div
+        class="icon copy"
+        v-clipboard:copy="output"
+        v-clipboard:success="onCopy"
+        v-clipboard:error="onCopyError"
+        v-if="input"
+      >
         <span>Copy to clipboard</span>
       </div>
     </div>
     <button @click="toggleConfig" v-if="!showConfig">Show Config</button>
     <button @click="toggleConfig" v-else>Hide Config</button>
     <div class="code-editor config" v-if="showConfig">
-      <codemirror class="code-editor" v-model="config" :options="configOptions"></codemirror>
-      <p class="tips">* If you change the default config, the examples will be unavailable in this browser. You can get them back by opening an incognito window.</p>
+      <codemirror
+        class="code-editor"
+        v-model="config"
+        :options="configOptions"
+      ></codemirror>
+      <p class="tips">
+        * If you change the default config, the examples will be unavailable in
+        this browser. You can get them back by opening an incognito window.
+      </p>
       <button @click="saveConfig">Save Config</button>
     </div>
   </div>
@@ -37,27 +93,28 @@ const OUTPUT_PLACEHOLDER = '// Output will be here'
 const DEFAULT_CONFIG = {
   mode: 'beancount',
   currency: 'USD',
-  timezone: 'America/Whitehorse',
+  timezone: 'America/Los_Angeles',
   tag: '#costflow',
-  replacement: {
-    'eob': 'Equity:Opening-Balances',
-    'bofa': 'Assets:US:BofA:Checking',
-    'rx': 'Assets:Receivables:X',
-    'ry': 'Assets:Receivables:Y',
-    'boc': 'Assets:CN:BOC',
-    'cloud': 'Expenses:Cloud',
-    'cmb': 'Liabilities:CreditCard:CMB',
-    'food': 'Expenses:Food',
-    'phone': 'Expenses:Home:Phone',
-    'rent': 'Expenses:Home:Rent',
-    'subscription': 'Expenses:Subscriptions',
-    'visa': 'Liabilities:CreditCard:Visa'
+  account: {
+    eob: 'Equity:Opening-Balances',
+    bofa: 'Assets:US:BofA:Checking',
+    rx: 'Assets:Receivables:X',
+    ry: 'Assets:Receivables:Y',
+    boc: 'Assets:CN:BOC',
+    cloud: 'Expenses:Cloud',
+    cmb: 'Liabilities:CreditCard:CMB',
+    food: 'Expenses:Food',
+    phone: 'Expenses:Home:Phone',
+    rent: 'Expenses:Home:Rent',
+    subscription: 'Expenses:Subscriptions',
+    visa: 'Liabilities:CreditCard:Visa'
   },
   formula: {
-    '☕️': '@Leplays ☕️ {{ amount }} Liabilities:CreditCard:Visa > Expenses:Coffee',
-    'c2f': '{{ pre }} cmb > food',
-    'gcp': '@Google {{ amount }} USD visa > cloud',
-    'spotify': '@Spotify 15.98 USD visa > subscription'
+    '☕️':
+      '@Leplays ☕️ {{ amount }} Liabilities:CreditCard:Visa > Expenses:Coffee',
+    c2f: '{{ pre }} cmb > food',
+    gcp: '@Google {{ amount }} USD visa > cloud',
+    spotify: '@Spotify 15.98 USD visa > subscription'
   },
   alphavantage: null,
   indent: 2,
@@ -69,10 +126,10 @@ var examples = [
   '2019-01-01 Rent 750 cmb + 750 boc > rent',
   'Dinner 180 CNY bofa > rx + ry + food',
   'Transfer to account in US 5000 CNY @@ 726.81 USD boc > 726.81 bofa',
-  '@Verizon | Assets:US:BofA:Checking -59.61 | Expenses:Home:Phone 59.61',
-  '@Verizon | bofa -59.61 | phone 59.61',
-  '2019-01-01 Rent | cmb -750 | boc -750 | rent 1500',
-  'Dinner | bofa 180 CNY | rx -60 | ry -60 | food -60',
+  '@Verizon Assets:US:BofA:Checking -59.61 | Expenses:Home:Phone 59.61',
+  '@Verizon bofa -59.61 | phone 59.61',
+  '2019-01-01 Rent cmb -750 | boc -750 | rent 1500',
+  'Dinner bofa 180 CNY | rx -60 | ry -60 | food -60',
   'f spotify',
   'gcp 12.50',
   'f c2f @KFC 36',
@@ -82,12 +139,12 @@ var examples = [
   'balance bofa 360',
   'event location Paris, France'
 ]
-var config = localStorage.getItem('config') || JSON.stringify(DEFAULT_CONFIG, null, 4)
+var config =
+  localStorage.getItem('costflow') || JSON.stringify(DEFAULT_CONFIG, null, 4)
 
 export default {
   name: 'app',
-  components: {
-  },
+  components: {},
   data () {
     return {
       input: '',
@@ -120,9 +177,17 @@ export default {
   },
   computed: {
     showShuffle () {
-      let defaultReplacement = JSON.stringify(DEFAULT_CONFIG.replacement, null, 4)
-      let currentConfig = JSON.parse(config)
-      let currentReplacement = JSON.stringify(currentConfig.replacement, null, 4)
+      const defaultReplacement = JSON.stringify(
+        DEFAULT_CONFIG.replacement,
+        null,
+        4
+      )
+      const currentConfig = JSON.parse(config)
+      const currentReplacement = JSON.stringify(
+        currentConfig.replacement,
+        null,
+        4
+      )
       return defaultReplacement === currentReplacement
     }
   },
@@ -133,7 +198,7 @@ export default {
         return
       }
       try {
-        let result = await costflow.parse(this.input, JSON.parse(config))
+        const result = await costflow.parse(this.input, JSON.parse(config))
         if (result) {
           this.output = result.output
         }
@@ -150,7 +215,9 @@ export default {
       let isSame = true
       let newInput
       while (isSame) {
-        let random = Math.floor(Math.random() * Math.floor(examples.length - 1))
+        const random = Math.floor(
+          Math.random() * Math.floor(examples.length - 1)
+        )
         newInput = examples[random]
         if (this.input !== newInput) {
           isSame = false
@@ -159,9 +226,7 @@ export default {
 
       this.input = newInput
     },
-    onCopy () {
-
-    },
+    onCopy () {},
     onCopyError (e) {
       console.log(e)
     },
@@ -222,7 +287,7 @@ export default {
   width: 100%;
   margin: 40px 0 20px;
   box-sizing: border-box;
-  border: 1px solid #2329D6;
+  border: 1px solid #2329d6;
   overflow: hidden;
 }
 .playground .input input {
@@ -234,7 +299,7 @@ export default {
   border: none;
   float: left;
   outline: none;
-  font-family: 'Fira Code', Menlo, Monaco, monospace;
+  font-family: "Fira Code", Menlo, Monaco, monospace;
   font-size: 13px;
 }
 .playground .input input.full {
@@ -261,7 +326,7 @@ export default {
 .playground .code-editor .CodeMirror {
   text-align: left;
   font-size: 14px;
-  font-family: 'Fira Code', Menlo, Monaco, monospace;
+  font-family: "Fira Code", Menlo, Monaco, monospace;
   line-height: 24px;
   padding: 20px 20px 20px 0;
   box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 16px;
@@ -271,7 +336,7 @@ export default {
 }
 .playground .code-editor .copy {
   position: absolute;
-  background-color: rgba(255, 255, 255, .1);
+  background-color: rgba(255, 255, 255, 0.1);
   color: #fff;
   bottom: 0;
   left: 0;
@@ -283,14 +348,13 @@ export default {
   z-index: 999;
 }
 .playground .code-editor .copy:hover {
-  background-color: rgba(255, 255, 255, .2);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .playground .code-editor .copy:active {
-  background-color: rgba(255, 255, 255, .3);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 .playground .code-editor .tips {
   color: #333;
   font-size: 12px;
 }
-
 </style>

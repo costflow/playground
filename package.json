@@ -1,43 +1,34 @@
 {
   "name": "costflow-playground",
-  "version": "0.3.3",
+  "version": "1.0.0",
   "author": "leplay <leqcany@gmail.com> (https://github.com/leplay)",
-  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
-  "keywords": [
-    "costflow",
-    "ledger",
-    "beancount",
-    "hledger",
-    "plain text accounting",
-    "double-entry bookkeeping"
-  ],
-  "bugs": {
-    "url": "https://github.com/costflow/playground/issues"
-  },
-  "homepage": "https://playground.costflow.io/",
   "dependencies": {
-    "core-js": "^2.6.5",
-    "costflow": "^0.3.3",
+    "core-js": "^3.6.5",
+    "costflow": "^1.0.4",
     "debounce": "^1.2.0",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
-    "vue-clipboard2": "^0.3.0",
+    "vue-clipboard2": "^0.3.1",
     "vue-codemirror": "^4.0.6"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.9.0",
-    "@vue/cli-plugin-eslint": "^3.9.0",
-    "@vue/cli-plugin-pwa": "^3.9.0",
-    "@vue/cli-service": "^3.9.0",
-    "@vue/eslint-config-standard": "^4.0.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
+    "@vue/cli-plugin-babel": "^4.5.8",
+    "@vue/cli-plugin-eslint": "^4.5.8",
+    "@vue/cli-plugin-pwa": "^4.5.8",
+    "@vue/cli-service": "^4.5.8",
+    "@vue/eslint-config-standard": "^5.1.2",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^6.2.2",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
@@ -62,5 +53,18 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/costflow/playground/issues"
+  },
+  "homepage": "https://playground.costflow.io/",
+  "keywords": [
+    "costflow",
+    "ledger",
+    "beancount",
+    "hledger",
+    "plain text accounting",
+    "double-entry bookkeeping"
+  ],
+  "license": "MIT"
 }

@@ -3,7 +3,7 @@
     <h2 class="title">Costflow Playground</h2>
     <p class="version">
       <a href="https://docs.costflow.io/syntax/">Syntax v1.0</a> /
-      <a href="https://github.com/costflow/parser">Parser v1.0.4</a>
+      <a href="https://github.com/costflow/parser">Parser v1.0.5</a>
     </p>
     <nav>
       <a class="nav-item" href="https://docs.costflow.io/" target="_blank"

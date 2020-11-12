@@ -1,6 +1,6 @@
 {
   "name": "costflow-playground",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "leplay <_@leplay.net> (https://leplay.net)",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "costflow": "^1.0.5",
+    "costflow": "^1.1.0",
     "debounce": "^1.2.0",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",

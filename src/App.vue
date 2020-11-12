@@ -3,7 +3,7 @@
     <h2 class="title">Costflow Playground</h2>
     <p class="version">
       <a href="https://docs.costflow.io/syntax/">Syntax v1.0</a> /
-      <a href="https://github.com/costflow/parser">Parser v1.0.5</a>
+      <a href="https://github.com/costflow/parser">Parser v1.1.0</a>
     </p>
     <nav>
       <a class="nav-item" href="https://docs.costflow.io/" target="_blank"
@@ -116,6 +116,7 @@ const DEFAULT_CONFIG = {
     gcp: '@Google {{ amount }} USD visa > cloud',
     spotify: '@Spotify 15.98 USD visa > subscription'
   },
+  defaultAccount: 'Assets:US:BofA:Checking',
   alphavantage: null,
   indent: 2,
   lineLength: 50
@@ -125,6 +126,7 @@ var examples = [
   '@Verizon 59.61 bofa > phone',
   '2019-01-01 Rent 750 cmb + 750 boc > rent',
   'Dinner 180 CNY bofa > rx + ry + food',
+  'Dinner pay with default account 180 CNY > rx + ry + food',
   'Transfer to account in US 5000 CNY @@ 726.81 USD boc > 726.81 bofa',
   '@Verizon Assets:US:BofA:Checking -59.61 | Expenses:Home:Phone 59.61',
   '@Verizon bofa -59.61 | phone 59.61',
@@ -134,7 +136,7 @@ var examples = [
   'gcp 12.50',
   'f c2f @KFC 36',
   '☕️ 4.2',
-  'Transfer to account in US | boc -5000 CNY @@ 726.81 USD  | bofa +726.81',
+  // 'Transfer to account in US | boc -5000 CNY @@ 726.81 USD  | bofa +726.81',
   'note bofa Called about fraudulent card.',
   'balance bofa 360',
   'event location Paris, France'

@@ -2820,10 +2820,10 @@ cosmiconfig@^5.0.0:
     js-yaml "^3.13.1"
     parse-json "^4.0.0"
 
-costflow@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/costflow/-/costflow-1.0.5.tgz#68119e1eb9137f91c1c2dc6c4372f658bdaa97f5"
-  integrity sha512-gOfOgCLZ97iOFRmQYZVQxa06pLAl6Pkdqq6YHGNvQHIpJylAjn0IMZo5nJQ1eoUTkodAz3Bl4k8hk6dPs3G5gg==
+costflow@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/costflow/-/costflow-1.1.0.tgz#94025d7149f9259681e67372aac5fd2c144e84fd"
+  integrity sha512-kNRvvAO/+NLNWZfsebpbqL5ELNYEQ8cRhRCcFhKS19vH9Eapjv2OZyqUG0XQxkIU2L1WLg5ncbV78I/v/E+qwg==
   dependencies:
     axios "^0.21.0"
     dayjs "^1.9.4"

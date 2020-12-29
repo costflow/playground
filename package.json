@@ -1,6 +1,6 @@
 {
   "name": "costflow-playground",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "author": "leplay <leplay@costflow.io> (https://leplay.net)",
   "scripts": {
     "serve": "vue-cli-service serve",

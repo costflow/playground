@@ -200,7 +200,7 @@ export default {
         return
       }
       try {
-        const result = await costflow.parse(this.input, JSON.parse(config))
+        const result = await costflow.parse(this.input, JSON.parse(this.config))
         if (result) {
           this.output = result.output
         }
@@ -243,6 +243,7 @@ export default {
         alert('Invalid JSON')
       }
       localStorage.setItem('config', JSON.stringify(config, null, 4))
+      this.showConfig = false
     }
   }
 }

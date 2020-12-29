@@ -3,7 +3,7 @@
     <h2 class="title">Costflow Playground</h2>
     <p class="version">
       <a href="https://docs.costflow.io/syntax/">Syntax v1.0</a> /
-      <a href="https://github.com/costflow/parser">Parser v1.1.1</a>
+      <a href="https://github.com/costflow/parser">Parser v1.1.2</a>
     </p>
     <nav>
       <a class="nav-item" href="https://docs.costflow.io/" target="_blank"
@@ -12,8 +12,8 @@
       <a class="nav-item" href="https://github.com/costflow" target="_blank"
         >Github</a
       >
-      <a class="nav-item" href="https://www.costflow.io/" target="_blank"
-        >Early Access</a
+      <a class="nav-item" href="https://hub.costflow.io/" target="_blank"
+        >Self-Hosted Costflow Hub</a
       >
     </nav>
     <div class="input">

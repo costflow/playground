@@ -3,17 +3,19 @@
     <h2 class="title">Costflow Playground</h2>
     <p class="version">
       <a href="https://docs.costflow.io/syntax/">Syntax v1.0</a> /
-      <a href="https://github.com/costflow/parser">Parser v1.2.0</a>
+      <a href="https://github.com/costflow/parser">Parser v2.0.2</a>
     </p>
     <nav>
-      <a class="nav-item" href="https://docs.costflow.io/" target="_blank"
+      <a class="nav-item" href="https://www.costflow.io/" target="_blank"
+        >Costflow.io</a
+      >
+      <a class="nav-item" href="https://www.costflow.io/docs/desktop-apps/" target="_blank"
+      >Desktop Apps</a>
+      <a class="nav-item" href="https://www.costflow.io/docs/" target="_blank"
         >Docs</a
       >
       <a class="nav-item" href="https://github.com/costflow" target="_blank"
         >Github</a
-      >
-      <a class="nav-item" href="https://hub.costflow.io/" target="_blank"
-        >Self-Hosted Costflow Hub</a
       >
     </nav>
     <div class="input">
@@ -146,7 +148,8 @@ var config =
 
 export default {
   name: 'app',
-  components: {},
+  components: {
+  },
   data () {
     return {
       input: '',
@@ -200,7 +203,7 @@ export default {
         return
       }
       try {
-        const result = await costflow.parse(this.input, JSON.parse(this.config))
+        const result = await costflow(this.input, JSON.parse(this.config))
         if (result) {
           this.output = result.output
         }
@@ -334,8 +337,8 @@ export default {
   padding: 20px 20px 20px 0;
   box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 16px;
   border-radius: 5px;
-  height: auto;
-  min-height: 200px;
+  height: 160px;
+  position: relative;
 }
 .playground .code-editor .copy {
   position: absolute;

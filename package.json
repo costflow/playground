@@ -1,6 +1,6 @@
 {
   "name": "costflow-playground",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "leplay <leplay@costflow.io> (https://leplay.net)",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -9,27 +9,26 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "costflow": "^1.2.0",
+    "costflow": "^2.0.2",
     "debounce": "^1.2.0",
     "register-service-worker": "^1.6.2",
-    "vue": "^2.6.10",
-    "vue-clipboard2": "^0.3.1",
+    "vue": "^2.7.15",
+    "vue-clipboard2": "^0.3.3",
     "vue-codemirror": "^4.0.6"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.5.8",
-    "@vue/cli-plugin-eslint": "^4.5.8",
-    "@vue/cli-plugin-pwa": "^4.5.8",
-    "@vue/cli-service": "^4.5.8",
-    "@vue/eslint-config-standard": "^5.1.2",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
+    "@babel/eslint-parser": "^7.22.15",
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-plugin-eslint": "^5.0.8",
+    "@vue/cli-plugin-pwa": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
+    "@vue/eslint-config-standard": "^8.0.1",
+    "eslint": "^8.53.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.10"
+    "eslint-plugin-vue": "^9.18.1",
+    "vue-template-compiler": "^2.7.15"
   },
   "eslintConfig": {
     "root": true,
@@ -37,12 +36,11 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/essential",
-      "@vue/standard"
+      "plugin:vue/essential"
     ],
     "rules": {},
     "parserOptions": {
-      "parser": "babel-eslint"
+      "parser": "@babel/eslint-parser"
     }
   },
   "postcss": {

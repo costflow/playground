@@ -6,14 +6,6 @@
 # Docs
 [https://docs.costflow.io/](https://docs.costflow.io/)
 
-# CLI
-[https://github.com/costflow/cli](https://github.com/costflow/cli)
-
-
-# Roadmap
-[https://github.com/orgs/costflow/projects](https://github.com/orgs/costflow/projects)
-
-
 <details><summary>DEV</summary><p>
 
 ## Project setup

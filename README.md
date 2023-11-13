@@ -6,6 +6,20 @@
 # Docs
 [https://docs.costflow.io/](https://docs.costflow.io/)
 
+
+## Donate
+
+Thank you for considering donating to Costflow. You can use one of the following methods:
+
+- Buy Me a Coffee: https://www.buymeacoffee.com/leplay
+- 支付宝 <br/> <img src="https://www.costflow.io/img/alipay.jpg" alt="Alipay" width="400"/>
+- 微信 <br/> <img src="https://www.costflow.io/img/wechat.png" alt="Wechat" width="400"/>
+
+## Author
+
+[leplay](http://leplay.net/)
+
+
 <details><summary>DEV</summary><p>
 
 ## Project setup
@@ -37,3 +51,5 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 </p></details>
+
+
